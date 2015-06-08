@@ -1,0 +1,13 @@
+<h1>All Restaurants</h1>
+<h2> <%= link_to 'Home', welcome_index_path %> </h2>
+	
+<p> <%= link_to 'Add a restaurant', new_restaurant_path %> </p>
+<% @restaurants.each do |restaurant| %>
+	
+	<div>
+		<strong><%= link_to restaurant.name, restaurant_path(restaurant) %></strong>
+		<p><%= link_to 'Edit', edit_restaurant_path(restaurant) %> <%= link_to 'Destroy', restaurant_path(restaurant),
+			    method: :delete, data:{ confirm: "Seriously?" } %></p>
+	</div>
+
+<% end %>
