@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :restaurants
+  resources :shelter
+
+
   devise_for :users
   get 'welcome/index'
 
