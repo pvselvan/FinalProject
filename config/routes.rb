@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
   resources :restaurants
-  resources :shelter
+  resources :shelters
 
 
   devise_for :users
   get 'welcome/index'
-
-  resources :restaurants
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
