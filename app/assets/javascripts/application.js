@@ -15,3 +15,15 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+//= require moment
+//= require fullcalendar
+
+
+var ready;
+
+ready = function() {
+	$('#calendar').fullCalendar();
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);

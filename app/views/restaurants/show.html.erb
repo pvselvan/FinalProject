@@ -1,6 +1,15 @@
+<head>
+<link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
+<script src='lib/jquery.min.js'></script>
+<script src='lib/moment.min.js'></script>
+<script src='fullcalendar/fullcalendar.js'></script>
+</head>
+
+
 <h1><%= @restaurant.name %></h1>
 <h2><%= @restaurant.address %></h2>
 <p><%= @restaurant.latitude %></p>
 <p><%= @restaurant.longitude %></p>
 
-<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@restaurant.latitude}%2C#{@restaurant.longitude}" %>
+<div id="calendar">
+</div>

@@ -15,3 +15,5 @@
  */
 
  *= require "landing_page.css"
+ *= require fullcalendar
+ *= require fullcalendar.print
