@@ -1,2 +1,6 @@
 <h1><%= @restaurant.name %></h1>
 <h2><%= @restaurant.address %></h2>
+<p><%= @restaurant.latitude %></p>
+<p><%= @restaurant.longitude %></p>
+
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@restaurant.latitude}%2C#{@restaurant.longitude}" %>
