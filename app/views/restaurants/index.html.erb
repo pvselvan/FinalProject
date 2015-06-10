@@ -5,19 +5,22 @@
 <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
 <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet' />
 <style>
-  body { margin:0; padding:0; }
-  #map { min-width: 200px; width: 50%; min-height: 200px; height: 80%}
+  #map { 
+  	min-width: 200px; 
+  	width: 100%; 
+  	min-height: 200px; 
+  	height: 100%;
+  	position: center;
+  	margin: 0 auto;
+  	margin-bottom: 30px;
+  	}
+  #calendar { margin-top: 50px; margin-bottom: 10px;}
 </style>
 </head>
 
 <body>
-<div id='map'></div>
-<script>
-L.mapbox.accessToken = 'pk.eyJ1IjoicHZzZWx2YW4iLCJhIjoiZGY5NDlhMTU2ZGIyMjEyN2I5N2I0NDQyOWE5NTBmN2YifQ.f2axpiKkUtrXvo9thxvWug';
-L.mapbox.map('map', 'pvselvan.mddpj22i');
-
-</script>
-
+<div class="wrapper">
+<div class="container">
 <h1>All Restaurants</h1>
 <h2> <%= link_to 'Home', root_path %> </h2>
 <p> <%= link_to 'Add a restaurant', new_restaurant_path %> </p>
@@ -27,6 +30,16 @@ L.mapbox.map('map', 'pvselvan.mddpj22i');
 <p><%= link_to 'Edit', edit_restaurant_path(restaurant) %> <%= link_to 'Destroy', restaurant_path(restaurant),
    method: :delete, data:{ confirm: "Seriously?" } %></p>
 </div>
-
 <% end %>
+
+<div id="calendar"></div>
+<div id='map'></div>
+<script>
+L.mapbox.accessToken = 'pk.eyJ1IjoicHZzZWx2YW4iLCJhIjoiZGY5NDlhMTU2ZGIyMjEyN2I5N2I0NDQyOWE5NTBmN2YifQ.f2axpiKkUtrXvo9thxvWug';
+L.mapbox.map('map', 'pvselvan.mddpj22i');
+
+</script>
+
 </body>
+</div>
+</div>

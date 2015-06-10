@@ -1,13 +1,17 @@
-<h1>All Shelters</h1>
-<h2> <%= link_to 'Home', root_path %> </h2>
-	
-<p> <%= link_to 'Add a shelter', new_shelter_path %> </p>
-<% @shelters.each do |shelter| %>
-	
-	<div>
-		<strong><%= link_to shelter.name, shelter_path(shelter) %></strong>
-		<p><%= link_to 'Edit', edit_shelter_path(shelter) %> <%= link_to 'Destroy', shelter_path(shelter),
-			    method: :delete, data:{ confirm: "Seriously?" } %></p>
-	</div>
+<div class="wrapper">
+	<div class="container">
+		<h1>All Shelters</h1>
+		<h2> <%= link_to 'Home', root_path %> </h2>
+		
+		<p> <%= link_to 'Add a shelter', new_shelter_path %> </p>
+		<% @shelters.each do |shelter| %>
+		
+		<div>
+			<strong><%= link_to shelter.name, shelter_path(shelter) %></strong>
+			<p><%= link_to 'Edit', edit_shelter_path(shelter) %> <%= link_to 'Destroy', shelter_path(shelter),
+				method: :delete, data:{ confirm: "Seriously?" } %></p>
+			</div>
 
-<% end %>
+			<% end %>
+		</div>
+	</div>
