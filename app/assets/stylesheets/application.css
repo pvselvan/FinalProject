@@ -15,5 +15,6 @@
  */
 
  *= require "landing_page.css"
+ *= require "heroic-features.css"
  *= require fullcalendar
  *= require fullcalendar.print
