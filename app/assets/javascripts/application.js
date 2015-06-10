@@ -13,16 +13,18 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require turbolinks
-//= require_tree .
 //= require moment
 //= require fullcalendar
+//= require turbolinks
+//= require_tree .
 
 
 var ready;
 
 ready = function() {
-	$('#calendar').fullCalendar();
+	$('#calendar').fullCalendar({
+		events: '/pickups.json'
+	});
 };
 
 $(document).ready(ready);

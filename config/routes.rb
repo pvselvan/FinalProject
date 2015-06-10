@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
-  devise_for :users 
+  devise_for :users
 
-  resources :restaurants
-  resources :shelters
+  resources :restaurants do
+    resources :pickups
+  end
+
+  resources :shelters do
+    resources :pickups
+  end
+
+  resources :pickups
   resources :profiles, only: [:show]
 
   # The priority is based upon order of creation: first created -> highest priority.
