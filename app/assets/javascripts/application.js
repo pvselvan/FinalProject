@@ -33,6 +33,9 @@ ready = function() {
             center: 'prev title next',
             right: ''
         },
+        eventRender: function(event, element) { 
+            element.find('.fc-title').append("<br/>" + event.description + "<br/>" + "Taken: " + event.completed); 
+        },
 		events: '/pickups.json'
 	});
 };
