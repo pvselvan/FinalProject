@@ -23,6 +23,16 @@ var ready;
 
 ready = function() {
 	$('#calendar').fullCalendar({
+		eventClick: function(event) {
+            var modal = $("#modal");
+            modal.find(".modal-title").html(event.title);
+            modal.modal();
+        },
+		header: {
+            left: '',
+            center: 'prev title next',
+            right: ''
+        },
 		events: '/pickups.json'
 	});
 };
