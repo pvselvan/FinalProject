@@ -41,6 +41,14 @@ class RestaurantsController < ApplicationController
 		@restaurant.destroy
 		redirect_to restaurants_path
 	end
+	def sendrequest
+		@user = current_user
+		@restaurant = Restaurant.find params[:id]
+		if user_signed_in?
+			Appointment.welcome_email(@user).deliver_later
+			redirect_to profile_path
+		end
+	end
 
 	private
 		def restaurant_params

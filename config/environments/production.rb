@@ -76,4 +76,17 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+
+
+config.appointment.delivery_method = :smtp
+# SMTP settings for gmail
+config.appointment.smtp_settings = {
+ :address              => "smtp.gmail.com",
+ :port                 => 587,
+ :user_name            => ENV['katernst'],
+ :password             => ENV['136035Kke'],
+ :authentication       => "plain",
+:enable_starttls_auto => true
+}
 end
