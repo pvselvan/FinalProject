@@ -3,6 +3,9 @@ Rails.application.routes.draw do
 
   resources :restaurants do
     resources :pickups
+    member do  
+    match 'sendrequest' => 'pins#sendrequest'  
+  end    
   end
 
   resources :shelters do

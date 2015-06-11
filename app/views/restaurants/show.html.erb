@@ -4,4 +4,5 @@
 <p><%= @restaurant.longitude %></p>
 
 <div id="calendar">
+<%= link_to "Request Contact", sendrequest_restaurant_path(current_user, @restaurant), class: "btn btn-primary" %>
 </div>
