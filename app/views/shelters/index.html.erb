@@ -1,13 +1,44 @@
-<h1>All Shelters</h1>
-<h2> <%= link_to 'Home', root_path %> </h2>
-	
-<p> <%= link_to 'Add a shelter', new_shelter_path %> </p>
-<% @shelters.each do |shelter| %>
-	
-	<div>
-		<strong><%= link_to shelter.name, shelter_path(shelter) %></strong>
-		<p><%= link_to 'Edit', edit_shelter_path(shelter) %> <%= link_to 'Destroy', shelter_path(shelter),
-			    method: :delete, data:{ confirm: "Seriously?" } %></p>
-	</div>
+<head>
+<meta charset=utf-8 />
+<title>A simple map</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet' />
+<style>
+  #map { 
+  	min-width: 200px; 
+  	width: 90%; 
+  	min-height: 200px; 
+  	height: 60%;
+  	position: center;
+  	margin: 0 auto;
+  	margin-bottom: 30px;
+  	margin-top: -40px;
+  	}
+</style>
+</head>
 
-<% end %>
+<div class="wrapper">
+	<div class="container">
+		<h1>All Shelters</h1>
+		<h2> <%= link_to 'Home', root_path %> </h2>
+
+		<p> <%= link_to 'Add a shelter', new_shelter_path %> </p>
+		<% @shelters.each do |shelter| %>
+
+		<div>
+			<strong><%= link_to shelter.name, shelter_path(shelter) %></strong>
+			<p><%= link_to 'Edit', edit_shelter_path(shelter) %> <%= link_to 'Destroy', shelter_path(shelter),
+				method: :delete, data:{ confirm: "Seriously?" } %></p>
+			</div>
+
+			<% end %>
+		</div>
+	</div>
+</div>
+
+		<div id='map'></div>
+		<script>
+		L.mapbox.accessToken = 'pk.eyJ1IjoicHZzZWx2YW4iLCJhIjoiZGY5NDlhMTU2ZGIyMjEyN2I5N2I0NDQyOWE5NTBmN2YifQ.f2axpiKkUtrXvo9thxvWug';
+		L.mapbox.map('map', 'pvselvan.mdfpj77f');
+		</script>
