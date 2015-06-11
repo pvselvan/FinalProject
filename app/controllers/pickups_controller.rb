@@ -41,8 +41,14 @@ class PickupsController < ApplicationController
 		@user = current_user
 		Appointment.sample_email(@user).deliver
 		@pickup.user_id = current_user.id
-		redirect_to restaurant_path
+		if @pickup.save
+			redirect_to restaurants_path, notice: 'Successful signup'
+		else
+			redirect_to pickup_path(@pickup), alert: 'Unspecified server error: not able to assign pickup'
+		end
+
 	end
+
 
 
 	def destroy
