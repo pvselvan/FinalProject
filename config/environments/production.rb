@@ -81,12 +81,4 @@ Rails.application.configure do
 
 config.appointment.delivery_method = :smtp
 # SMTP settings for gmail
-config.appointment.smtp_settings = {
- :address              => "smtp.gmail.com",
- :port                 => 587,
- :user_name            => ENV['GMAIL_USERNAME'], #"'katernst'],
- :password             => ENV['GMAIL_PASSWORD'], #136035Kke'],
- :authentication       => "plain",
-:enable_starttls_auto => true
-}
 end

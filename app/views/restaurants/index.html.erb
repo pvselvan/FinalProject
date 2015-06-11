@@ -32,9 +32,9 @@
     </div>
 
 	<div class="container calendar">
-		<div class="restaurant-list">
+  <div class="calendar-container text-center">
 		<% @restaurants.each do |restaurant| %>
-			<div>
+			<div class="restaurant-list">
 				<strong><%= link_to restaurant.name, restaurant_path(restaurant) %></strong>
 			</div>
 		<% end %>

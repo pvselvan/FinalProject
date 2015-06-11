@@ -1,7 +1,16 @@
-<br /><br /><h1> this is the pickups show page </h1>
-
+<div class="wrapper">
+    <div class= "bg-colored text-center">
+    <div class="container">
+    <div class="span12">
+   
 <% if @pickup.completed? %>
-	<h3>Example heading <span class="label label-danger">Taken</span></h3>
+	<h3>SORRY!!!! This pickup is <span class="label label-danger">Taken</span></h3>
+	<%= link_to "Go back", restaurants_path %>
 <% else %>
 	<%= link_to "Sign up for pickup", assign_pickup_pickup_path, class: "btn btn-primary btn-lg" %>
 <% end %>
+
+ </div>
+    </div>
+    </div> 
+    </div>
