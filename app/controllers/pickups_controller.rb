@@ -35,6 +35,12 @@ class PickupsController < ApplicationController
 			render 'edit'
 		end
 	end
+	
+	def assign_pickup
+		@pickup = Pickup.find params[:id]
+		Appointment.sample_email(@user).deliver
+	end
+
 
 	def destroy
 		@pickup = Pickup.find params[:id]

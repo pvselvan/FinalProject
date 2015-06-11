@@ -2,17 +2,18 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :restaurants do
-    resources :pickups
-    member do  
-    match 'sendrequest' => 'pins#sendrequest'  
-  end    
+    resources :pickups   
   end
 
   resources :shelters do
     resources :pickups
   end
 
-  resources :pickups
+  resources :pickups do
+    member do  
+      post 'assign_pickup' 
+    end 
+  end 
   resources :profiles, only: [:show]
 
   # The priority is based upon order of creation: first created -> highest priority.
