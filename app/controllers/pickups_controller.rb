@@ -38,7 +38,10 @@ class PickupsController < ApplicationController
 	
 	def assign_pickup
 		@pickup = Pickup.find params[:id]
+		@user = current_user
 		Appointment.sample_email(@user).deliver
+		@pickup.user_id = current_user.id
+		redirect_to restaurant_path
 	end
 
 

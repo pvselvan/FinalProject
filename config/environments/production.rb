@@ -84,8 +84,8 @@ config.appointment.delivery_method = :smtp
 config.appointment.smtp_settings = {
  :address              => "smtp.gmail.com",
  :port                 => 587,
- :user_name            => ENV['katernst'],
- :password             => ENV['136035Kke'],
+ :user_name            => ENV['GMAIL_USERNAME'], #"'katernst'],
+ :password             => ENV['GMAIL_PASSWORD'], #136035Kke'],
  :authentication       => "plain",
 :enable_starttls_auto => true
 }

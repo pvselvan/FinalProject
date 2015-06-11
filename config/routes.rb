@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :pickups do
     member do  
-      post 'assign_pickup' 
+      get 'assign_pickup' 
     end 
   end 
   resources :profiles, only: [:show]
