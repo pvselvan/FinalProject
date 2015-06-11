@@ -1,7 +1,4 @@
 <h1><%= @restaurant.name %></h1>
 <h2><%= @restaurant.address %></h2>
-<p><%= @restaurant.latitude %></p>
-<p><%= @restaurant.longitude %></p>
 
-<div id="calendar">
-</div>
+<%= render @restaurant.pickups %>
