@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150612111757) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "pickups", force: :cascade do |t|
     t.text     "description"
     t.datetime "start"
@@ -26,9 +29,9 @@ ActiveRecord::Schema.define(version: 20150612111757) do
     t.string   "title"
   end
 
-  add_index "pickups", ["restaurant_id"], name: "index_pickups_on_restaurant_id"
-  add_index "pickups", ["shelter_id"], name: "index_pickups_on_shelter_id"
-  add_index "pickups", ["user_id"], name: "index_pickups_on_user_id"
+  add_index "pickups", ["restaurant_id"], name: "index_pickups_on_restaurant_id", using: :btree
+  add_index "pickups", ["shelter_id"], name: "index_pickups_on_shelter_id", using: :btree
+  add_index "pickups", ["user_id"], name: "index_pickups_on_user_id", using: :btree
 
   create_table "restaurants", force: :cascade do |t|
     t.string   "name"
@@ -64,7 +67,10 @@ ActiveRecord::Schema.define(version: 20150612111757) do
     t.datetime "updated_at",                          null: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "pickups", "restaurants"
+  add_foreign_key "pickups", "shelters"
+  add_foreign_key "pickups", "users"
 end
