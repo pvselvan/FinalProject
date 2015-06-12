@@ -13,8 +13,7 @@
  *= require fullcalendar
  *= require fullcalendar.print
  *= require_tree .
+ *= require landing-page
+ *= require heroic-features
  *= require_self
  */
-
- *= require "landing_page.css"
- *= require "heroic-features.css"
