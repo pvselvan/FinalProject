@@ -11,8 +11,11 @@
 
     <div class="container">
     <div class="span12">
-<h2><%= @restaurant.address %></h2>
+<p><%= @restaurant.address %></p>
+<h2><%= @restaurant.description %></h2>
+<p><%= link_to 'Check out their website', @restaurant.url, class: 'btn btn-default' %>
 
+<h3>Pickups:</h3>
 <%= render @restaurant.pickups %>
 </div>
 </div>

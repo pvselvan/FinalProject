@@ -34,7 +34,7 @@ ready = function() {
             right: ''
         },
         eventRender: function(event, element) { 
-            element.find('.fc-title').append("<br/>" + event.description + "<br/>" + "Taken: " + event.completed); 
+            element.find('.fc-title').append("<br/>" + "Taken: " + event.completed); 
         },
 		events: '/pickups.json'
 	});

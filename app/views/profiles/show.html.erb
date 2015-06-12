@@ -93,6 +93,11 @@
 
         </div>
         <!-- /.row -->
+        <% current_user.pickups.each do |pickup| %>
+            <h3>Name: <% pickup.title %></h3>
+            <h4>Description: <% pickup.description %></h4>
+            <p>Time of pickup: <% pickup.start.strftime("%A %B %d, %Y %I:%M %p") %><p>
+            <% end %>
 
         <hr>
 

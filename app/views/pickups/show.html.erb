@@ -4,7 +4,7 @@
     <div class="span12">
    
 <% if @pickup.completed? %>
-	<h3>SORRY!!!! This pickup is <span class="label label-danger">Taken</span></h3>
+	<h3>Sorry! This pickup is <span class="label label-danger">Taken</span></h3>
 	<%= link_to "Go back", restaurants_path %>
 <% else %>
 	<%= link_to "Sign up for pickup", assign_pickup_pickup_path, class: "btn btn-primary btn-lg" %>
@@ -12,5 +12,9 @@
 
  </div>
     </div>
-    </div> 
+
+    <h3><%= @pickup.title %></h3> 
+	<h4><%= @pickup.description %></h4>
+	<p>Time of pickup: <%= @pickup.start.strftime("%A %B %d, %Y %I:%M %p") %><p>
+    </div>
     </div>

@@ -41,6 +41,8 @@ class PickupsController < ApplicationController
 		@user = current_user
 		Appointment.sample_email(@user).deliver
 		@pickup.user_id = current_user.id
+		current_user.pickups << @pickup
+		current_user.save
 		@pickup.completed = true
 		if @pickup.save
 			redirect_to restaurants_path, notice: 'Successful signup'
