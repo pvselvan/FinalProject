@@ -17,8 +17,10 @@ rest5 = Restaurant.create! name: "Nandos", address: "309 Main Rd Shop 9 & 10, Se
 rest6 = Restaurant.create! name: "Myog", address: "50 Kloof St Gardens, Cape Town"
 rest7 = Restaurant.create! name: "Vovo Telo", address: "60B Kloof St, Cape Town"
 rest8 = Restaurant.create! name: "iX Food Truck", address: "south, 19 Park Road, Gardens, Cape Town, 8001"
-pickup1 = Pickup.create title: "Test 1", description: "2 boxes of produce", start: "2015-06-02", restaurant_id: rest1.id
-pickup2 = Pickup.create title: "Test 2", description: "2 boxes of bread", start: "2015-06-04", restaurant_id: rest1.id
+pickup1 = Pickup.create title: "Pickup", description: "2 boxes of produce", start: "2015-06-02", restaurant_id: rest1.id
+pickup2 = Pickup.create title: "Pickup", description: "2 boxes of bread", start: "2015-06-04", restaurant_id: rest2.id
 
 pickup1.restaurant = rest1
-pickup2.restaurant = rest1
+pickup2.restaurant = rest2
+
+
