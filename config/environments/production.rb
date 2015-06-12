@@ -79,6 +79,6 @@ Rails.application.configure do
 
 
 
-config.appointment.delivery_method = :smtp
+# config.appointment.delivery_method = :smtp
 # SMTP settings for gmail
 end
